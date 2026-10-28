@@ -9,6 +9,21 @@ Capture ICMP Echo Requests and Echo Replies on the Ubuntu VM's enp0s8 interface 
 pinging the NAT gateway at 10.0.3.2. Transfer the capture to Windows using SCP and analyze it in
 Wireshark to verify packet counts, source and destination addresses, and ICMP Type and Code values.
 
+### Environment
+
+- Windows host with Wireshark.
+- Ubuntu Desktop 24.04.4 VM in VirtualBox, accessed over SSH.
+- Capture interface: enp0s8.
+- Ubuntu NAT address during this lab: 10.0.3.15.
+- NAT gateway and ping target: 10.0.3.2.
+
+### Route Check
+
+```bash
+ip -4 route get 10.0.3.2
+```
+
+The output selected enp0s8 with source address 10.0.3.15. No `via` appeared because the destination was directly reachable on that interface.
 
 ### Results
 

@@ -1,3 +1,8 @@
+# Networking Labs
+
+## Lab 01: ICMP Capture over SSH
+
+
 ### Objective
 
 Capture ICMP Echo Requests and Echo Replies on the Ubuntu VM's enp0s8 interface while

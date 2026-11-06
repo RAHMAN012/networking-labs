@@ -35,3 +35,19 @@ The output selected enp0s8 with source address 10.0.3.15. No `via` appeared beca
 - Echo Replies had ICMP Type 0, Code 0.
 - The filter `icmp.type == 8` displayed packets 1, 3, 5, and 7.
 - The filter `icmp.type == 0` displayed packets 2, 4, 6, and 8.
+
+
+
+## Lab 02: Route Tracing through VirtualBox NAT
+
+### Results
+
+- UDP traceroute to 8.8.8.8 showed 10.0.3.2 at hop 1 and no responses at hops 2–8.
+- ICMP traceroute reported a response attributed to 8.8.8.8 at hop 1.
+- Three ping requests with outgoing TTL 1 received Echo Replies attributed to 8.8.8.8.
+
+### Interpretation
+
+An asterisk means no matching response arrived within the timeout; it does not identify the cause.
+
+The ICMP results are consistent with NAT-specific handling and do not establish the physical hop count to 8.8.8.8.
